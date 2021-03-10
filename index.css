@@ -1,0 +1,19 @@
+ 
+.form-check-input {
+    width: 24px!important;
+    height: 24px!important;
+     margin-top: .5rem;
+    margin-left: -1.25rem;
+}
+ 
+button.btn.dropdown-toggle.btn-light {
+    border: 1px solid black;
+}
+ 
+.form-control {
+    border: 1px solid black;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%!important;
+}
