@@ -16,111 +16,117 @@
     <title>Hello, world!</title>
 </head>
 
-<body style="background-color:gray">
- 
+<body style="background-color:#F0EBF8">
 
-    <button class="btn btn-info btn-block mt-2" type="button" onclick="createNew(this)">Yeni Alan Ekle</button> </div>
-
-    <section class="container bg-secondary " style="max-width: 992px">
-        <div class="card my-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <input class="form-control form-control-lg mb-2" id="basliksizForm-0" type="text"
-                            placeholder="Başlıksız form">
-                        <input class="form-control" type="text" id="basliksizAciklama-0" placeholder="Form Açıklaması">
-                        <button type="button" class="btn btn-success btn-block mt-2" id="soruEkle-0"
-                            onclick="addNewQuestion(this)">Yeni Soru Ekle</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="card-area" id="cardArea">
-            <div class="card" id="questionArea-0">
+    <div class="container" style="max-width: 992px">
+        <button class="btn btn-block text-white font-weight-bold mt-2" style="background-color:#673AB7;box-shadow: -1px -1px 25px -2px rgba(91,88,176,1);
+    " type="button" onclick="createNew(this)">Yeni Alan Ekle</button> </div>
+    </div>
+    <section class="container container-area " style="max-width: 992px">
+        <div class="p-1 my-4 sectionArea"
+            style="border:1px solid rgb(114, 114, 114);border-radius:10px;box-shadow: -1px -1px 20px 3px rgba(0,0,0,0.61)">
+            <div class="card my-4">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6" id="basliksizSoru-0">
-                            <input class="form-control" type="text" placeholder="Başlıksız soru">
-                        </div>
-
-                        <div class="col-6">
-                            <select class="selectpicker mb-3 show-menu-arrow select-option" placeholder="Seçim Yap"
-                                id="changeSelection-0" onchange="changeSelection(this)" style="width:100%">
-                                <option value="secimYap-0" disabled>Seçim Yap</option>
-                                <option value="kisaYanit-0">Kısa Yanıt</option>
-                                <option value="paragraf-0">Paragraf</option>
-                                <option value="acilirMenu-0">Açılır Menu</option>
-                                <option value="tarih-0">Tarih</option>
-                                <option value="saat-0">Saat</option>
-                            </select>
+                        <div class="col-12">
+                            <input class="form-control form-control-lg mb-2" id="basliksizForm-0" type="text"
+                                placeholder="Başlıksız form">
+                            <input class="form-control" type="text" id="basliksizAciklama-0"
+                                placeholder="Form Açıklaması">
+                            <button type="button" class="btn btn-success btn-block mt-2" id="soruEkle-0"
+                                onclick="addNewQuestion(this)">Yeni Soru Ekle</button>
                         </div>
                     </div>
-                    <div class="row mb-2">
 
-                        <div class="col-8  " id="kisaYanit-0">
-                            <input class="form-control" type="text" disabled placeholder="Kısa Yanıt Metni">
-                        </div>
-
-                        <div class="col-12  " style="display:none" id="paragraf-0">
-                            <textarea disabled class="form-control" id="floatingTextarea"
-                                placeholder="Uzun Yanıt Metni"></textarea>
-                        </div>
-
-                        <span class="d-none">açılır menu dropdow coktan secmeli ve elle doldur</span>
-                        <div class="col-12 " style="display:none" id="acilirMenu-0">
-
-                            <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-0"
-                                onchange="coktanSecmeliSelection(this)">
-                                <option selected="selected" disabled>Seçim yapınız</option>
-                                <option value="getFromDb-0"> Çoktan Seçmeli</option>
-                                <option value="elleDoldur-0">Elle Doldur</option>
-                            </select>
-
-                            <div id="getFromDb-0" style="display:none">
-                                <select class="selectpicker mb-3 show-menu-arrow select-option">
-                                    <option selected disabled>Secim Yap</option>
-                                    <option value="sehirler-0">Şehirleri Getir</option>
-                                    <option value="ulkeler-0">Ülkeleri Getir</option>
-                                </select>
+                </div>
+            </div>
+            <div class="card-area" id="cardArea">
+                <div class="card" id="questionArea-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6" id="basliksizSoru-0">
+                                <input class="form-control" type="text" placeholder="Başlıksız soru">
                             </div>
 
-                            <div class="container-dropdown" id="elleDoldur-0">
-                                <button type="button" class="btn btn-success" id="dropdown-0"
-                                    onclick="addDropdownBtn(this)">Yeni ekle
-                                    <span style="font-size:16px; font-weight:bold;">+ </span>
-                                </button>
+                            <div class="col-6">
+                                <select class="selectpicker mb-3 show-menu-arrow select-option" placeholder="Seçim Yap"
+                                    id="changeSelection-0" onchange="changeSelection(this)" style="width:100%">
+                                    <option value="secimYap-0" disabled>Seçim Yap</option>
+                                    <option value="kisaYanit-0">Kısa Yanıt</option>
+                                    <option value="paragraf-0">Paragraf</option>
+                                    <option value="acilirMenu-0">Açılır Menu</option>
+                                    <option value="tarih-0">Tarih</option>
+                                    <option value="saat-0">Saat</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
 
-                                <div class="form-check my-2">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control ml-2" placeholder="Seçenek">
+                            <div class="col-8  " id="kisaYanit-0">
+                                <input class="form-control" type="text" disabled placeholder="Kısa Yanıt Metni">
+                            </div>
+
+                            <div class="col-12  " style="display:none" id="paragraf-0">
+                                <textarea disabled class="form-control" id="floatingTextarea"
+                                    placeholder="Uzun Yanıt Metni"></textarea>
+                            </div>
+
+                            <span class="d-none">açılır menu dropdow coktan secmeli ve elle doldur</span>
+                            <div class="col-12 " style="display:none" id="acilirMenu-0">
+
+                                <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-0"
+                                    onchange="coktanSecmeliSelection(this)">
+                                    <option disabled>Seçim yapınız</option>
+                                    <option value="getFromDb-0"> Listeden Getir</option>
+                                    <option selected="selected" value="elleDoldur-0">Elle Doldur</option>
+                                </select>
+
+                                <div id="getFromDb-0" style="display:none">
+                                    <select class="selectpicker mb-3 show-menu-arrow select-option">
+                                        <option selected disabled>Secim Yap</option>
+                                        <option value="sehirler-0">Şehirleri Getir</option>
+                                        <option value="ulkeler-0">Ülkeleri Getir</option>
+                                    </select>
+                                </div>
+
+                                <div class="container-dropdown" id="elleDoldur-0">
+                                    <button type="button" class="btn btn-success" id="dropdown-0"
+                                        onclick="addDropdownBtn(this)">Yeni ekle
+                                        <span style="font-size:16px; font-weight:bold;">+ </span>
+                                    </button>
+
+                                    <div class="form-check my-2">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control ml-2" placeholder="Seçenek">
+                                        </div>
                                     </div>
+                                </div>
+
+                            </div>
+
+                            <span class="d-none">Tarih</span>
+                            <div class="col-8 " style="display:none" id="tarih-0">
+                                <div class="input-group ">
+                                    <button class="btn btn-outline-secondary" type="button" disabled>Tarih</button>
+                                    <input type="text" class="form-control" placeholder="gün/ay/yıl" disabled>
+                                </div>
+                            </div>
+
+                            <span class="d-none">Saat</span>
+                            <div class="col-8  " style="display:none" id="saat-0">
+                                <div class="input-group ">
+                                    <button class="btn btn-outline-secondary" type="button" disabled>Saat</button>
+                                    <input type="text" class="form-control" placeholder="saat:dakika" disabled>
                                 </div>
                             </div>
 
                         </div>
-
-                        <span class="d-none">Tarih</span>
-                        <div class="col-8 " style="display:none" id="tarih-0">
-                            <div class="input-group ">
-                                <button class="btn btn-outline-secondary" type="button" disabled>Tarih</button>
-                                <input type="text" class="form-control" placeholder="gün/ay/yıl" disabled>
-                            </div>
-                        </div>
-
-                        <span class="d-none">Saat</span>
-                        <div class="col-8  " style="display:none" id="saat-0">
-                            <div class="input-group ">
-                                <button class="btn btn-outline-secondary" type="button" disabled>Saat</button>
-                                <input type="text" class="form-control" placeholder="saat:dakika" disabled>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    </div>
 
     <!-- Bölüm ekle -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -137,15 +143,13 @@
         let addNewQuestioncount = 1;
 
         function createNew() {
-
-
-            console.log("here")
+            //yeni bir başlıksız form ekleme alanı
             if (checkNewCardCount <= 100) {
-                $('.container').append(`
-                    <section class="bg-secondary  my-4" >
-                <div class="mt-2 p-3 mb-2 bg-gradient-warning  text-white d-flex justify-content-between">
-                <div class="bg-primary text-white pt-3 text-center font-weight-bold" style="width:100%">Yeni alan Eklendi</div>
-                <button class="btn btn-danger" onclick="deleteCreatedNew(this)">Alanı Sil</button>
+                $('.container-area').append(`
+                    <div class="sectionArea p-1 my-4" style="border:1px solid rgb(114, 114, 114);border-radius:10px;box-shadow: -1px -1px 20px 3px rgba(0,0,0,0.61)" >
+                <div class="my-2 p-1 bg-info text-white d-flex justify-content-between" style="border:1px solid gray;border-radius:10px">
+                <div class="bg-info pt-2 text-white btn-block text-center font-weight-bold" style="width:100%">Yeni alan Eklendi</div>
+                <button class="btn btn-danger text-nowrap" onclick="deleteCreatedNew(this)">Alanı Sil</button>
                 </div>
 
         <div class="card my-4">
@@ -198,12 +202,12 @@
 
                             <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-${checkNewCardCount}"
                                 onchange="coktanSecmeliSelection(this)">
-                                <option selected="selected" disabled>Seçim yapınız</option>
-                                <option value="getFromDb-${checkNewCardCount}"> Çoktan Seçmeli</option>
-                                <option value="elleDoldur-${checkNewCardCount}">Elle Doldur</option>
+                                <option  disabled>Seçim yapınız</option>
+                                <option value="getFromDb-${checkNewCardCount}"> Listeden Getir</option>
+                                <option selected="selected" value="elleDoldur-${checkNewCardCount}">Elle Doldur</option>
                             </select>
 
-                            <div id="getFromDb-0" style="display:none">
+                            <div id="getFromDb-${checkNewCardCount}" style="display:none">
                                 <select class="selectpicker mb-3 show-menu-arrow select-option">
                                     <option selected disabled>Secim Yap</option>
                                     <option value="sehirler-${checkNewCardCount}">Şehirleri Getir</option>
@@ -246,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
                     
                     `)
                 checkNewCardCount++
@@ -254,13 +258,13 @@
                 alert("max kart sayısına ulaşıldı")
             }
             $('.selectpicker').selectpicker('render');
-
         }
 
-
         function addNewQuestion(btn) {
+            //seçilen başlıksız forma göre başlıksız soru ekleme
             let id = $(btn).attr('id')
-            let addNewQuestion = document.getElementById(id).closest('section').getElementsByClassName('card-area')[0]
+            let addNewQuestion = document.getElementById(id).closest('.sectionArea').getElementsByClassName(
+                'card-area')[0]
             console.log("closestSection", addNewQuestion)
             if (addNewQuestioncount < 20) {
                 $(addNewQuestion).append(`
@@ -299,9 +303,9 @@
 
                             <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-0-${addNewQuestioncount}"
                                 onchange="coktanSecmeliSelection(this)">
-                                <option selected="selected" disabled>Seçim yapınız</option>
-                                <option value="getFromDb-0-${addNewQuestioncount}"> Çoktan Seçmeli</option>
-                                <option value="elleDoldur-0-${addNewQuestioncount}">Elle Doldur</option>
+                                <option disabled>Seçim yapınız</option>
+                                <option value="getFromDb-0-${addNewQuestioncount}"> Listeden Getir</option>
+                                <option selected="selected" value="elleDoldur-0-${addNewQuestioncount}">Elle Doldur</option>
                             </select>
 
                             <div id="getFromDb-0-${addNewQuestioncount}" style="display:none">
@@ -324,7 +328,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <span class="d-none">Tarih</span>
@@ -361,17 +364,20 @@
         }
 
         function deleteCreatedNew(el) {
+            //secilen başlıksız formu silme
             checkNewCardCount--
-            $(el).closest("section").remove()
+            $(el).closest(".sectionArea").remove()
 
         }
 
         function deleteSelectedQuestion(el) {
+            //seçilen başlıksız soruyu silme
             addNewQuestioncount--
             $(el).closest(".card").remove()
         }
 
         function addDropdownBtn(btn) {
+            //elle doldur kısmında input sayısını artırmaya yarar
             let id = $(btn).attr('id')
             let addNewCard = document.getElementById(id).closest('div')
 
@@ -389,12 +395,13 @@
         }
 
         function removeDropdownBtn(el) {
+            //elle doldur kısmında seçilen inputu silmeye yarar
             checkDropdownCount--;
             $(el).parent("div").remove()
         }
 
         function changeSelection(btn) {
-            //cardArea
+            //selecet option kısmında seçilen option u göster diğerlerini kapat
             let id = $(btn).attr('id')
             let addNewSelection = document.getElementById(id)
             for (let i = 1; i < addNewSelection.length; i++) {
@@ -404,9 +411,11 @@
         }
 
         function coktanSecmeliSelection(btn) {
+            //açılır menu seçidiğinde 2 secenkli select option gelir. duruma göre goster sakla
             let id = $(btn).attr('id')
             let addNewSecmeli = document.getElementById(id)
-            for (let i = 0; i < addNewSecmeli.length; i++) {
+            console.log("id", id, addNewSecmeli)
+            for (let i = 1; i < addNewSecmeli.length; i++) {
                 document.getElementById(addNewSecmeli[i].value).style.display = 'none'
             }
             document.getElementById(addNewSecmeli[btn.selectedIndex].value).style.display = 'block'
