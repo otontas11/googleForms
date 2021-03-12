@@ -18,120 +18,121 @@
 
 <body style="background-color:#F0EBF8">
     <form action class="submit">
-    <div class="container" style="max-width: 992px">
-        <input class="form-control form-control-lg mb-1" id="basliksizForm-0" type="text" placeholder="Başlıksız form">
-        <input class="form-control" type="text" id="basliksizAciklama-0" placeholder="Form Açıklaması">
-    </div>
+        <div class="container" style="max-width: 992px">
+            <input class="form-control form-control-lg mb-1" id="basliksizForm-0" type="text"
+                placeholder="Başlıksız form">
+            <input class="form-control" type="text" id="basliksizAciklama-0" placeholder="Form Açıklaması">
+        </div>
 
-    <div class="container " style="max-width: 992px">
-        <button class="btn btn-block text-white font-weight-bold mt-4" style="background-color:#673AB7;box-shadow: -1px -1px 25px -2px rgba(91,88,176,1);
+        <div class="container " style="max-width: 992px">
+            <button class="btn btn-block text-white font-weight-bold mt-4" style="background-color:#673AB7;box-shadow: -1px -1px 25px -2px rgba(91,88,176,1);
     " type="button" onclick="createNew(this)">Yeni Alan Ekle</button>
 
-    </div>
-    
-    <section class="container container-area " style="max-width: 992px">
-        <div class="p-1 my-4 sectionArea" id="sectionArea-0"
-            style="border:1px solid rgb(114, 114, 114);border-radius:10px;box-shadow: -1px -1px 20px 3px rgba(0,0,0,0.61)">
-            <div class="card mb-2">
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-success btn-block mt-2" id="soruEkle-0"
-                            onclick="addNewQuestion(this)">Yeni Soru Ekle</button>
-                    </div>
+        </div>
 
-                </div>
-            </div>
-            <div class="card-area" id="cardArea">
-                <div class="card" id="questionArea-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6" id="basliksizSoru-0">
-                                <input class="form-control" type="text" placeholder="Başlıksız soru">
-                            </div>
-
-                            <div class="col-6">
-                                <select class="selectpicker mb-3 show-menu-arrow select-option" placeholder="Seçim Yap"
-                                    id="changeSelection-0" onchange="changeSelection(this)" style="width:100%">
-                                    <option value="secimYap-0" disabled>Seçim Yap</option>
-                                    <option value="kisaYanit-0">Kısa Yanıt</option>
-                                    <option value="paragraf-0">Paragraf</option>
-                                    <option value="acilirMenu-0">Açılır Menu</option>
-                                    <option value="tarih-0">Tarih</option>
-                                    <option value="saat-0">Saat</option>
-                                </select>
-                            </div>
+        <section class="container container-area " style="max-width: 992px">
+            <div class="p-1 my-4 sectionArea" id="sectionArea-0"
+                style="border:1px solid rgb(114, 114, 114);border-radius:10px;box-shadow: -1px -1px 20px 3px rgba(0,0,0,0.61)">
+                <div class="card mb-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-success btn-block mt-2" id="soruEkle-0"
+                                onclick="addNewQuestion(this)">Yeni Soru Ekle</button>
                         </div>
-                        <div class="row mb-2">
 
-                            <div class="col-8  " id="kisaYanit-0">
-                                <input class="form-control" type="text" disabled placeholder="Kısa Yanıt Metni">
-                            </div>
-
-                            <div class="col-12  " style="display:none" id="paragraf-0">
-                                <textarea disabled class="form-control" id="floatingTextarea"
-                                    placeholder="Uzun Yanıt Metni"></textarea>
-                            </div>
-
-                            <span class="d-none">açılır menu dropdow coktan secmeli ve elle doldur</span>
-                            <div class="col-12 " style="display:none" id="acilirMenu-0">
-
-                                <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-0"
-                                    onchange="coktanSecmeliSelection(this)">
-                                    <option disabled>Seçim yapınız</option>
-                                    <option value="getFromDb-0"> Listeden Getir</option>
-                                    <option selected="selected" value="elleDoldur-0">Elle Doldur</option>
-                                </select>
-
-                                <div id="getFromDb-0" style="display:none">
-                                    <select class="selectpicker mb-3 show-menu-arrow select-option">
-                                        <option selected disabled>Secim Yap</option>
-                                        <option value="sehirler-0">Şehirleri Getir</option>
-                                        <option value="ulkeler-0">Ülkeleri Getir</option>
-                                    </select>
+                    </div>
+                </div>
+                <div class="card-area" id="cardArea">
+                    <div class="card" id="questionArea-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6" id="basliksizSoru-0">
+                                    <input class="form-control" type="text" placeholder="Başlıksız soru">
                                 </div>
 
-                                <div class="container-dropdown" id="elleDoldur-0">
-                                    <button type="button" class="btn btn-success" id="dropdown-0"
-                                        onclick="addDropdownBtn(this)">Yeni ekle
-                                        <span style="font-size:16px; font-weight:bold;">+ </span>
-                                    </button>
+                                <div class="col-6">
+                                    <select class="selectpicker mb-3 show-menu-arrow select-option"
+                                        placeholder="Seçim Yap" id="changeSelection-0" onchange="changeSelection(this)"
+                                        style="width:100%">
+                                        <option value="secimYap-0" disabled>Seçim Yap</option>
+                                        <option value="kisaYanit-0">Kısa Yanıt</option>
+                                        <option value="paragraf-0">Paragraf</option>
+                                        <option value="acilirMenu-0">Açılır Menu</option>
+                                        <option value="tarih-0">Tarih</option>
+                                        <option value="saat-0">Saat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
 
-                                    <div class="form-check my-2">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control ml-2" placeholder="Seçenek">
+                                <div class="col-8  " id="kisaYanit-0">
+                                    <input class="form-control" type="text" disabled placeholder="Kısa Yanıt Metni">
+                                </div>
+
+                                <div class="col-12  " style="display:none" id="paragraf-0">
+                                    <textarea disabled class="form-control" id="floatingTextarea"
+                                        placeholder="Uzun Yanıt Metni"></textarea>
+                                </div>
+
+                                <span class="d-none">açılır menu dropdow coktan secmeli ve elle doldur</span>
+                                <div class="col-12 " style="display:none" id="acilirMenu-0">
+
+                                    <select class="selectpicker mb-3 show-menu-arrow select-option" id="coktanSecmeli-0"
+                                        onchange="coktanSecmeliSelection(this)">
+                                        <option disabled>Seçim yapınız</option>
+                                        <option value="getFromDb-0"> Listeden Getir</option>
+                                        <option selected="selected" value="elleDoldur-0">Elle Doldur</option>
+                                    </select>
+
+                                    <div id="getFromDb-0" style="display:none">
+                                        <select class="selectpicker mb-3 show-menu-arrow select-option">
+                                            <option selected disabled>Secim Yap</option>
+                                            <option value="sehirler-0">Şehirleri Getir</option>
+                                            <option value="ulkeler-0">Ülkeleri Getir</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="container-dropdown" id="elleDoldur-0">
+                                        <button type="button" class="btn btn-success" id="dropdown-0"
+                                            onclick="addDropdownBtn(this)">Yeni ekle
+                                            <span style="font-size:16px; font-weight:bold;">+ </span>
+                                        </button>
+
+                                        <div class="form-check my-2">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control ml-2" placeholder="Seçenek">
+                                            </div>
                                         </div>
+                                    </div>
+
+                                </div>
+
+                                <span class="d-none">Tarih</span>
+                                <div class="col-8 " style="display:none" id="tarih-0">
+                                    <div class="input-group ">
+                                        <button class="btn btn-outline-secondary" type="button" disabled>Tarih</button>
+                                        <input type="text" class="form-control" placeholder="gün/ay/yıl" disabled>
+                                    </div>
+                                </div>
+
+                                <span class="d-none">Saat</span>
+                                <div class="col-8  " style="display:none" id="saat-0">
+                                    <div class="input-group ">
+                                        <button class="btn btn-outline-secondary" type="button" disabled>Saat</button>
+                                        <input type="text" class="form-control" placeholder="saat:dakika" disabled>
                                     </div>
                                 </div>
 
                             </div>
-
-                            <span class="d-none">Tarih</span>
-                            <div class="col-8 " style="display:none" id="tarih-0">
-                                <div class="input-group ">
-                                    <button class="btn btn-outline-secondary" type="button" disabled>Tarih</button>
-                                    <input type="text" class="form-control" placeholder="gün/ay/yıl" disabled>
-                                </div>
-                            </div>
-
-                            <span class="d-none">Saat</span>
-                            <div class="col-8  " style="display:none" id="saat-0">
-                                <div class="input-group ">
-                                    <button class="btn btn-outline-secondary" type="button" disabled>Saat</button>
-                                    <input type="text" class="form-control" placeholder="saat:dakika" disabled>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <input type="submit" value="Submit"  >
-    <button id="saveData" class="btn btn-primary">Save</button>
+         <button id="saveData" class="btn btn-primary">Kaydet</button>
 
-     </form>
+    </form>
 
     <!-- Bölüm ekle -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -149,7 +150,7 @@
 
         function createNew() {
             //yeni bir başlıksız form ekleme alanı
-            if (checkNewCardCount <= 100) {
+            if (checkNewCardCount <= 200) {
                 $('.container-area').append(`
                     <div class="sectionArea p-1 my-4" id="sectionArea-${checkNewCardCount}" style="border:1px solid rgb(114, 114, 114);border-radius:10px;box-shadow: -1px -1px 20px 3px rgba(0,0,0,0.61)" >
                 <div class="my-2 p-1 bg-info text-white d-flex justify-content-between" style="border:1px solid gray;border-radius:10px">
@@ -268,7 +269,7 @@
             let addNewQuestion = document.getElementById(id).closest('.sectionArea').getElementsByClassName(
                 'card-area')[0]
             console.log("closestSection", addNewQuestion)
-            if (addNewQuestioncount < 1000) {
+            if (addNewQuestioncount < 2000) {
                 $(addNewQuestion).append(`
                 <div class="card my-2" id="questionArea-${addNewQuestioncount}">
                 <div class="card-body">
@@ -367,14 +368,14 @@
 
         function deleteCreatedNew(el) {
             //secilen başlıksız formu silme
-            checkNewCardCount--
+            //checkNewCardCount--
             $(el).closest(".sectionArea").remove()
 
         }
 
         function deleteSelectedQuestion(el) {
             //seçilen başlıksız soruyu silme
-            addNewQuestioncount--
+           // addNewQuestioncount--
             $(el).closest(".card").remove()
         }
 
@@ -383,7 +384,7 @@
             let id = $(btn).attr('id')
             let addNewCard = document.getElementById(id).closest('div')
 
-            if (checkDropdownCount < 1000) {
+            if (checkDropdownCount < 2000) {
                 checkDropdownCount++;
                 $(addNewCard).append(
                     `<div class="form-check my-2">
@@ -398,7 +399,7 @@
 
         function removeDropdownBtn(el) {
             //elle doldur kısmında seçilen inputu silmeye yarar
-            checkDropdownCount--;
+           // checkDropdownCount--;
             $(el).parent("div").remove()
         }
 
@@ -424,28 +425,58 @@
 
         }
     </script>
-<script>
- $("#saveData").click(function (e) {
-     e.preventDefault()
-                var resultArray = [];
-                $('.submit').find('[id^="sectionArea-"]').each(function() {
-                    var rowData = {};
-                  
-                   
-                    rowData['questionAreas'] =  $(this).find('[id^="questionArea-"]') 
-                    resultArray.push(rowData);
-                    for(let i=0;i<resultArray.length;i++){
-                        console.log(resultArray[i])
-                     }
-                   
-                   // rowData['input'] = $(this).find('input[type=text]').val();
-                   // rowData['checkboxID'] = $(this).find('input[type=checkbox]').attr('id');
-                   
-                });
-               console.log(resultArray,resultArray.length);
-            });
-</script>
+    <!-- <script>
+        $("#saveData").click(function (e) {
+            e.preventDefault()
+            var resultArray = [];
+   
+            $('.submit').each(function () {
+                var rowData =new Set();
+                var sectionAreaIds=[]
+                var questionAreas=[]
+                var resultArray=[]
+                var hey=[]
+                let totalSectionArea = $(this).find('[id^="sectionArea-"]').length
 
+                for (let i = 0; i < totalSectionArea; i++) {
+                    let sectionAreaId=$(this).find('[id^="sectionArea-"]').eq(i).attr('id')
+                    sectionAreaIds.push(sectionAreaId)
+                   
+
+                }
+                for(let i=0;i<sectionAreaIds.length;i++){
+                    //rowData[sectionAreaIds[i]] = $('#'+sectionAreaIds[i]).find('[id^="questionArea-"]')
+
+                    for(let j=0;j<$('#'+sectionAreaIds[i]).find('[id^="questionArea-"]').length;j++){
+                        questionAreas.push($('#'+sectionAreaIds[i]).find('[id^="questionArea-"]').eq(j).attr('id'))
+                      //  hey=[$('#'+sectionAreaIds[i]).find('[id^="questionArea-"]').eq(j).attr('id')]
+                        console.log("questionAreas",questionAreas)
+                       // rowData.push(sectionAreaIds[i],hey)
+
+                       // console.log(array1.concat(array2));
+
+                    }
+                 
+console.log("type",typeof rowData)
+                resultArray.push(rowData)
+                }
+                console.log("resultArray",resultArray)
+               
+               // console.log("2",resultArray)
+                //  console.log("hey",$(this).find('[id^="sectionArea-"]').eq(0).attr('id'))
+
+                //  rowData['sectionArea']=  $(this).find('[id^="sectionArea-"]')
+                // rowData['questionAreas'] =  $(this).find('[id^="questionArea-"]')
+                // resultArray.push(rowData); 
+
+                // rowData['input'] = $(this).find('input[type=text]').val();
+                // rowData['checkboxID'] = $(this).find('input[type=checkbox]').attr('id');
+
+            });
+           // console.log(resultArray, resultArray.length);
+        });
+    </script>
+  -->
 </body>
 
 </html>
