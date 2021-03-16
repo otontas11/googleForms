@@ -121,8 +121,8 @@
                                     <div id="fromDbByHands-0">
                                         <div id="getFromDb-0" style="display: none">
                                             <select class="selectpicker mb-3 show-menu-arrow select-option">
-                                                <option selected disabled>Secim Yap</option>
-                                                <option id="sehirler-0" value="sehirler-0">
+                                                <option  disabled>Secim Yap</option>
+                                                <option selected id="sehirler-0" value="sehirler-0">
                                                     Şehirleri Getir
                                                 </option>
                                                 <option id="ulkeler-0" value="ulkeler-0">
@@ -156,8 +156,9 @@
                 </div>
             </div>
         </section>
-
-        <button id="saveData" class="btn btn-primary">Kaydet</button>
+        <div class="container" style="max-width: 992px">
+        <button id="saveData" class="btn btn-primary btn-block mb-4 font-weight-bold">Kaydet</button>
+    </div>
     </form>
 
     <!-- Bölüm ekle -->
@@ -263,8 +264,8 @@
 
                             <div id="getFromDb-${checkNewCardCount}" style="display:none">
                                 <select class="selectpicker mb-3 show-menu-arrow select-option">
-                                    <option selected disabled>Secim Yap</option>
-                                    <option id="sehirler-${checkNewCardCount}" value="sehirler-${checkNewCardCount}">Şehirleri Getir</option>
+                                    <option   disabled>Secim Yap</option>
+                                    <option selected id="sehirler-${checkNewCardCount}" value="sehirler-${checkNewCardCount}">Şehirleri Getir</option>
                                     <option id="ulkeler-${checkNewCardCount}" value="ulkeler-${checkNewCardCount}">Ülkeleri Getir</option>
                                 </select>
                             </div>
@@ -460,7 +461,7 @@
             //açılır menu seçidiğinde 2 secenkli select option gelir. duruma göre goster sakla
             let id = $(btn).attr("id");
             let addNewSecmeli = document.getElementById(id);
-            console.log("id", id, addNewSecmeli);
+          //  console.log("id", id, addNewSecmeli);
             for (let i = 1; i < addNewSecmeli.length; i++) {
                 document.getElementById(addNewSecmeli[i].value).style.display =
                     "none";
@@ -483,6 +484,9 @@
                 let question = [];
                 let formAciklamasi = "";
                 let totalSectionArea = $(this).find('[id^="sectionArea-"]').length;
+                let formBasligi=$(this).find('[id^="basliksizForm"]').val()
+                
+                resultArray['formBasligi']=formBasligi;
 
                 //kaç tane section olduğunu bul
                 for (let i = 0; i < totalSectionArea; i++) {
@@ -492,7 +496,7 @@
                         .attr("id");
                     sectionAreaIds.push(sectionAreaId);
                 }
-                console.log("section", sectionAreaIds);
+               //console.log("section", sectionAreaIds);
                 //her section içerisinde question ları bul
                 for (let i = 0; i < sectionAreaIds.length; i++) {
                     question = [];
@@ -512,7 +516,7 @@
                         .find('[id^="basliksizAciklama"]')
                         .val();
 
-                    console.log("form acı", formAciklamasi);
+                    
 
                     resultArray.push({
                         sectionName: sectionAreaIds[i],
@@ -521,13 +525,13 @@
                     });
                 }
 
-                console.log("resultArray", resultArray);
+                
 
                 setTimeout(() => {
 
 
                     for (let i = 0; i < resultArray.length; i++) {
-                        console.log("resultArray.length",resultArray.length);
+                        
                         let basliksizSoruInput = ''
                         let activeQuestionID=''
                         let getSelectInputValues=[]
@@ -541,7 +545,7 @@
                                // console.log("this",this);
                             if($(this).css("display") === "block"){
                                 activeQuestionID = $(this).attr("id")
-                                console.log("activeQuestionID",activeQuestionID);
+                              //  console.log("activeQuestionID",activeQuestionID);
                             }
                             //eğer select option kısmı seçilmiş ise
                             if (activeQuestionID === $("#" + resultArray[i].questionAreaBlock[j].questionArea).find('[id^="acilirMenu-"]').attr('id')) {
@@ -561,13 +565,13 @@
 
                                               });
                                        
-                                             combineSelected.push({selectType:elleDoldurId,getSelectInputValues,basliksizSoru:basliksizSoruInput})
-                                          console.log("combineSelected",combineSelected);
+                                             combineSelected.push({selectType:elleDoldurId.split('-')[0],getSelectInputValues,basliksizSoru:basliksizSoruInput})
+                                         // console.log("combineSelected",combineSelected);
                                         }
                                         else{
                                             //eğer veritabanından getir kısmı secilmişse
                                             let fromDb= $(this).find("select").attr("selected", "selected").val();
-                                            combineSelected.push({selectType:$(this).attr("id"),fromDb,basliksizSoru:basliksizSoruInput})
+                                            combineSelected.push({selectType:$(this).attr("id").split('-')[0],fromDb,basliksizSoru:basliksizSoruInput})
                                         } 
                                       
                                     }
@@ -577,24 +581,21 @@
                             }//eğer select dışındaki yerler secilmişşse
                             else if($(this).css("display") === "block"){
                                 activeQuestionID = $(this).attr("id")
-                                combineSelected.push({selectType:activeQuestionID,activeQuestionID,basliksizSoru:basliksizSoruInput})
+                                combineSelected.push({selectType:activeQuestionID.split('-')[0],activeQuestionID,basliksizSoru:basliksizSoruInput})
                                
                             } 
                                 
                             })
 
-                            console.log(" resultArray[i] .questionArea", resultArray[i].questionAreaBlock[j].questionArea=combineSelected)
+                             resultArray[i].questionAreaBlock[j].questionArea=combineSelected[j]
 
                         }
-                        console.log("resultArray",resultArray);
-
- console.log("combineSelected",combineSelected);
-
+                       
 
                     }
 
-                })
-
+                },500)
+console.log("sonuc",resultArray);
                
             });
         });
